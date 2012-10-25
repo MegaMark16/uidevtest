@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Stories</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link href="../css/uidevtest.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="content">
+        </div>
+
+        <script src="../js/jquery-1.8.0.min.js"></script>
+        <script src="../js/mustache.js"></script>
+        <script src="../js/date.js"></script>
+        <script src="../js/uidevtest.js"></script>
+
+        <textarea class='hidden news_story_list_template'>
+            <ul id="storyList">
+            {{# objects }}
+                <li>
+                    <img class="shadow" src="{{lead_photo_image_thumb}}" /> 
+                    <h4 class="headline"><a href="?story={{id}}">{{title}}</a></h4>
+                    <div class="sub categories">{{categories_name}}</div>
+                    <div class="sub published">Posted: {{pub_date_formatted}}</div>
+                    <div class="sub updated">Updated: {{updated_formatted}}</div>
+                </li>
+            {{ /objects }}
+            </ul> 
+        </textarea>
+        <textarea class='hidden news_story_template'>
+            <img src="{{lead_photo_image_thumb}}" /> 
+            <h4 class="headline"><a href="?story={{id}}">{{title}}</a></h4>
+            <div class="categories">{{categories_name}}</div>
+            <div class="published">Posted: {{pub_date}}</div>
+            <div class="updated">Updated: {{updated}}</div>
+        </textarea>
+    </body>
+</html>      
