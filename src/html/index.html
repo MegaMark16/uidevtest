@@ -8,12 +8,14 @@
         <meta name="author" content="">
 
         <link href="../css/uidevtest.css" rel="stylesheet">
-        <link href="../css/bootstrap.css" rel="stylesheet">
+        <!--<
+        link href="../css/bootstrap.css" rel="stylesheet">
         <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+        -->
     </head>
 
     <body>
-        <div class="content">
+        <div class="content container-fluid">
         </div>
 
         <script src="../js/jquery-1.8.0.min.js"></script>
@@ -35,11 +37,74 @@
             </ul> 
         </textarea>
         <textarea class='hidden news_story_template'>
-            <img src="{{lead_photo_image_thumb}}" /> 
-            <h4 class="headline"><a href="?story={{id}}">{{title}}</a></h4>
-            <div class="categories">{{categories_name}}</div>
-            <div class="published">Posted: {{pub_date}}</div>
-            <div class="updated">Updated: {{updated}}</div>
+            <div class="row">
+                <div>
+                    <div class="header_breadcrumb">
+                        <a href="#">Home </a> > <a href="./"> News</a>
+                    </div>
+                    <div class="sub dates small">
+                        Posted: {{pub_date_formatted}} | Updated: {{updated_formatted}}
+                    </div>
+                    <h1 class="headline">{{title}}</h1>
+                    <div class="sub dates big">
+                        Posted: {{pub_date_formatted}} | Updated: {{updated_formatted}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <ul class="social small">
+                    <li>
+                        <i class="comment"></i>
+                        <a href="#">Comment</a>
+                    </li>
+                    <li>
+                        <i class="share"></i>
+                        <a href="#">Share</a>
+                    </li>
+                    <li>
+                        <i class="favorite"></i>
+                        <a href="#">Favorite</a>
+                    </li>
+                    <li>
+                        <i class="vote"></i>
+                        <a href="#">Vote</a>
+                    </li>
+                </ul>
+                <div class="image">
+                    <div class="imageContainer">
+                        <img src="{{lead_photo_image_url}}" /> 
+                        <div class="credits">{{lead_photo_credit}}</div>
+                    </div>
+                    <div class="caption">{{lead_photo_caption}}</div>
+                </div>
+                <div class="storyContainer">
+                    <ul class="social big">
+                        <li>
+                            <i class="comment"></i>
+                            <a href="#">Comment</a>
+                        </li>
+                        <li>
+                            <i class="share"></i>
+                            <a href="#">Share</a>
+                        </li>
+                        <li>
+                            <i class="favorite"></i>
+                            <a href="#">Favorite</a>
+                        </li>
+                        <li>
+                            <i class="vote"></i>
+                            <a href="#">Vote</a>
+                        </li>
+                    </ul>
+
+                    <div class="story">
+                        <p class="authors">
+                            By <a href="#">{{{author}}}</a>
+                        </p>
+                        {{{story}}}
+                    </div>
+                </div>
         </textarea>
     </body>
 </html>      

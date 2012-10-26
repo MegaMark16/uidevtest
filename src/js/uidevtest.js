@@ -21,9 +21,10 @@ function process_stories(data, response_status) {
         story.updated_formatted = get_updated_formatted;
     }
     if (story_id) {
-        story = data.objects.filter(function(value) { 
-                if (value.id == story_id) { 
-                    return value;
+        story = [];
+        $(data.objects).each(function(index, item) { 
+                if (item.id == story_id) { 
+                    story.push(item);
                 }
             });
         if (story.length) {

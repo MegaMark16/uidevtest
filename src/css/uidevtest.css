@@ -1,4 +1,13 @@
-
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 10px 15px;
+}
+a, a:hover, a:visited, a:active {
+    color: #036dbe;
+}
+p {
+    margin-top: 0;
+}
 #storyList li h3 {
     margin-bottom: 0;
 }
@@ -6,17 +15,22 @@
 #storyList  {
     list-style: none;
     margin: 0;
+    padding: 0;
 }
 
 #storyList li {
-    padding: 15px 20px;
+    padding: 15px;
+}
+
+#storyList .headline a {
+    color: #036dbe;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 #storyList .headline {
     margin: 0;
-    color: #036dbe;
-    font-size: 16px;
-    font-weight: bold;
 }
 
 #storyList li img {
@@ -34,6 +48,11 @@
     font-size: 14px;
 }
 
+.dates {
+    font-size: 11px;
+    color: #444444;
+}
+
 .hidden {
     display: none;
 }
@@ -46,4 +65,168 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
     /* For IE 5.5 - 7 */
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
+h1.headline {
+    font-size: 24px;
+    color: #444444;
+    margin: 10px 0 5px 0;
+}
+.row {
+    margin-top: 15px;
+}
+
+.image {
+    width: 260px;
+}
+
+.header_breadcrumb {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 11px;
+    color: #036dbe;
+    border-top: 2px solid #cdcdcd;
+    border-bottom: 2px solid #cdcdcd;
+    padding: 5px;
+}
+.header_breadcrumb a {
+    color: #036dbe;
+    text-decoration: none;
+}
+
+@media (min-width: 840px) {
+    .story {
+        -webkit-column-count: 2;
+        -webkit-column-gap: 15px;
+        -webkit-column-width: 260px;
+        -moz-column-count: 2;
+        -moz-column-gap: 15px;
+        -moz-column-width: 260px;
+    }
+    .story, .social {
+        width: 535px;
+        padding-left: 15px;
+        margin-top: 0;
+    }
+    .image {
+        float: left;
+    }
+    .small {
+        display: none;
+    }
+    .social li:hover i {
+        background-image: url(../images/uidevtest-sprites.png);
+    }
+    .social i {
+        background-image: url(../images/uidevtest-sprites-grayscale.png);
+    }
+    .imageContainer .credits {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: #000000;
+        /* Fallback for web browsers that doesn't support RGBa */
+        background: rgb(255, 255, 255);
+        /* RGBa with 0.6 opacity */
+        background: rgba(255, 255, 255, 0.6);
+        padding: 0px 4px;
+        margin: 4px 2px;
+    }
+}
+
+@media (max-width: 839px) {
+    .big {
+        display: none;
+    }
+    .dates.small {
+        margin-top: 5px;
+    }
+    .social i {
+        background-image: url(../images/uidevtest-sprites.png);
+    }
+    .social {
+        padding-left: 0;
+    }
+    .row {
+        margin-top: 5px;
+    }
+    .imageContainer .credits {
+        bottom: -20px;
+        color: #898989;
+    }
+    .caption {
+        margin-top: 16px;
+    }
+    .story {
+        margin-top: 10px;
+    }
+}
+
+.imageContainer .credits {
+    position: absolute;
+    right: 0;
+    padding: 0px 4px;
+    margin: 4px 2px;
+}
+
+.storyContainer {
+    float: left;
+}
+
+.story {
+    font-size: 14px;
+    color: #444444;
+    line-height: 18px;
+}
+
+.imageContainer {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+}
+.imageContainer img {
+    border: 2px solid #000;
+    max-width: 256px;
+}
+
+.caption {
+    line-height: 14px;
+    color: #444444;
+}
+
+.social a {
+    color: #036dbe;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+    margin: 4px 15px 10px 0;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.social li {
+    list-style: none;
+    padding: 0;
+    float: left;
+}
+
+.social i {
+    background-repeat: no-repeat;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    
+}
+
+.comment {
+    background-position: 0 0;
+}
+.share {
+    background-position: -20px 0;
+}
+.favorite {
+    background-position: -40px 0;
+}
+.vote {
+    background-position: -60px 0;
 }
